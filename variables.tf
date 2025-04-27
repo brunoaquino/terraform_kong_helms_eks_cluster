@@ -102,30 +102,6 @@ variable "kong_ingress_controller_enabled" {
   default     = true
 }
 
-variable "kong_cpu_request" {
-  description = "Requisição de CPU para o Kong"
-  type        = string
-  default     = "200m"
-}
-
-variable "kong_memory_request" {
-  description = "Requisição de memória para o Kong"
-  type        = string
-  default     = "256Mi"
-}
-
-variable "kong_cpu_limit" {
-  description = "Limite de CPU para o Kong"
-  type        = string
-  default     = "500m"
-}
-
-variable "kong_memory_limit" {
-  description = "Limite de memória para o Kong"
-  type        = string
-  default     = "512Mi"
-}
-
 # Variáveis para banco de dados Kong
 variable "kong_postgres_host" {
   description = "Host do PostgreSQL para Kong"
@@ -223,30 +199,6 @@ variable "konga_create_ingress" {
   description = "Indica se deve criar um Ingress para o Konga"
   type        = bool
   default     = true
-}
-
-variable "konga_cpu_request" {
-  description = "Requisição de CPU para o Konga"
-  type        = string
-  default     = "100m"
-}
-
-variable "konga_memory_request" {
-  description = "Requisição de memória para o Konga"
-  type        = string
-  default     = "128Mi"
-}
-
-variable "konga_cpu_limit" {
-  description = "Limite de CPU para o Konga"
-  type        = string
-  default     = "200m"
-}
-
-variable "konga_memory_limit" {
-  description = "Limite de memória para o Konga"
-  type        = string
-  default     = "256Mi"
 }
 
 # Variáveis para banco de dados Konga

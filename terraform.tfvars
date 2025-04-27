@@ -21,10 +21,6 @@ kong_enable_admin_https         = true
 kong_create_admin_ingress       = false
 kong_create_proxy_ingress       = true
 kong_ingress_controller_enabled = true
-kong_cpu_request                = "200m"
-kong_memory_request             = "512Mi"
-kong_cpu_limit                  = "500m"
-kong_memory_limit               = "1024Mi"
 
 # Konga
 konga_namespace        = "konga"
@@ -35,10 +31,6 @@ konga_replicas         = 1
 konga_node_env         = "production"
 konga_service_type     = "ClusterIP"
 konga_create_ingress   = true
-konga_cpu_request      = "200m"
-konga_memory_request   = "512Mi"
-konga_cpu_limit        = "500m"
-konga_memory_limit     = "1024Mi"
 konga_token_secret     = "token-secret-konga-123"
 
 # Banco de dados específico para Kong

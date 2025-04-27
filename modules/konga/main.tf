@@ -173,17 +173,6 @@ resource "kubernetes_deployment" "konga" {
             name  = "TOKEN_SECRET"
             value = var.token_secret
           }
-
-          resources {
-            requests = {
-              cpu    = var.resources.requests.cpu
-              memory = var.resources.requests.memory
-            }
-            limits = {
-              cpu    = var.resources.limits.cpu
-              memory = var.resources.limits.memory
-            }
-          }
         }
       }
     }
