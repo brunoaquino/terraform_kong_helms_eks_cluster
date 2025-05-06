@@ -163,6 +163,27 @@ resource "helm_release" "kong" {
     value = "false"
   }
 
+  # Recursos
+  set {
+    name  = "resources.requests.cpu"
+    value = var.resources.requests.cpu
+  }
+
+  set {
+    name  = "resources.requests.memory"
+    value = var.resources.requests.memory
+  }
+
+  set {
+    name  = "resources.limits.cpu"
+    value = var.resources.limits.cpu
+  }
+
+  set {
+    name  = "resources.limits.memory"
+    value = var.resources.limits.memory
+  }
+
   depends_on = [
     kubernetes_namespace.kong
   ]

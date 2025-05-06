@@ -48,6 +48,18 @@ module "kong" {
   ingress_controller_enabled = var.kong_ingress_controller_enabled
   cert_manager_environment   = var.cert_manager_letsencrypt_server
 
+  # Configurações de recursos
+  resources = {
+    requests = {
+      cpu    = var.kong_cpu_request
+      memory = var.kong_memory_request
+    }
+    limits = {
+      cpu    = var.kong_cpu_limit
+      memory = var.kong_memory_limit
+    }
+  }
+
   # Configurações de banco de dados (se aplicável)
   postgres_host     = var.kong_postgres_host
   postgres_port     = var.kong_postgres_port
@@ -79,6 +91,18 @@ module "konga" {
   service_type             = var.konga_service_type
   create_ingress           = var.konga_create_ingress
   cert_manager_environment = var.cert_manager_letsencrypt_server
+
+  # Configurações de recursos
+  resources = {
+    requests = {
+      cpu    = var.konga_cpu_request
+      memory = var.konga_memory_request
+    }
+    limits = {
+      cpu    = var.konga_cpu_limit
+      memory = var.konga_memory_limit
+    }
+  }
 
   # Configurações de banco de dados (se aplicável)
   postgres_host      = var.konga_postgres_host

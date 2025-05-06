@@ -72,6 +72,30 @@ variable "ingress_controller_enabled" {
   default     = true
 }
 
+variable "resources" {
+  description = "Recursos para o Kong"
+  type = object({
+    requests = object({
+      cpu    = string
+      memory = string
+    })
+    limits = object({
+      cpu    = string
+      memory = string
+    })
+  })
+  default = {
+    requests = {
+      cpu    = "200m"
+      memory = "256Mi"
+    }
+    limits = {
+      cpu    = "500m"
+      memory = "512Mi"
+    }
+  }
+}
+
 variable "enable_proxy_https" {
   description = "Habilita HTTPS para o proxy do Kong"
   type        = bool

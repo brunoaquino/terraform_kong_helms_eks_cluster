@@ -77,6 +77,30 @@ variable "cert_manager_environment" {
   default     = "prod"
 }
 
+variable "resources" {
+  description = "Recursos para o Konga"
+  type = object({
+    requests = object({
+      cpu    = string
+      memory = string
+    })
+    limits = object({
+      cpu    = string
+      memory = string
+    })
+  })
+  default = {
+    requests = {
+      cpu    = "100m"
+      memory = "128Mi"
+    }
+    limits = {
+      cpu    = "200m"
+      memory = "256Mi"
+    }
+  }
+}
+
 variable "postgres_host" {
   description = "Host do PostgreSQL"
   type        = string
